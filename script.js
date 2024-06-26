@@ -9,17 +9,19 @@ function cleanInputString(str) {
 
 function clickCheckBtn(input) {
     let text = cleanInputString(input);
+    textInput.value = "";
 
-    if(text === "") {
+    if(input === "") {
         alert("Please input a value."); 
         return;
     }
 
     if(text.toLowerCase() === text.toLowerCase().split("").reverse().join("")) {
-        result.textContent = `${input} is a palindrome.`;
-    } else {
-        result.textContent = `${input} is not a palindrome.`;
-    }
+        result.innerHTML = `<b>${input}</b> is a palindrome.`;
+        return;
+    } 
+    result.innerHTML = `<b>${input}</b> is not a palindrome.`;
+    
 }
 
 checkBtn.addEventListener("click", () => {

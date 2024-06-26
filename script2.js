@@ -1,6 +1,8 @@
 const textInput = document.getElementById("text-input");
 const checkBtn = document.getElementById("check-btn");
 const result = document.getElementById("result");
+const bold = document.getElementById("bold");
+const span = document.getElementById("span");
 
 function cleanInputString(str) {
     const regex = /[\s\W_]/gi;
@@ -18,13 +20,13 @@ function clickCheckBtn(input) {
     
     for(let i = 0; i < textArr.length/2; i++) {
         if(textArr[i] !== textArr[textArr.length-i-1]) {
-            result.textContent = `${input} is not a palindrome.`;
+            result.innerHTML = `<b>${input}</b> is not a palindrome.`;
             textInput.value = "";
             return;
         }
     }
     textInput.value = "";
-    result.textContent = `${input} is a palindrome.`;
+    result.innerHTML = `<b>${input}</b> is a palindrome.`;
 };
 
 
