@@ -16,7 +16,7 @@ function clickCheckBtn(input) {
     let text = cleanInputString(input).toLowerCase();
     let textArr = text.split("");
     
-    for(let i = 0; i < textArr.length; i++) {
+    for(let i = 0; i < textArr.length/2; i++) {
         if(textArr[i] !== textArr[textArr.length-i-1]) {
             result.textContent = `${input} is not a palindrome.`;
             return;
