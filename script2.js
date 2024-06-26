@@ -19,9 +19,11 @@ function clickCheckBtn(input) {
     for(let i = 0; i < textArr.length/2; i++) {
         if(textArr[i] !== textArr[textArr.length-i-1]) {
             result.textContent = `${input} is not a palindrome.`;
+            textInput.value = "";
             return;
         }
     }
+    textInput.value = "";
     result.textContent = `${input} is a palindrome.`;
 };
 
